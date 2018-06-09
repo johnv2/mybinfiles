@@ -24,7 +24,7 @@ def parseArgs():
   return arg_list
 
 def main():
-  server = "device42.peak6.net"
+  server = "device42/"
   baseURL = "https://" + server
   url = baseURL + "/api/1.0/devices/all/"
   dev42 = Device42APIUtility()
@@ -136,7 +136,7 @@ def main():
             response['cost'] = purchase['cost']
         if 'order_no' in purchase:
             response['order_no'] = purchase['order_no']
-    
+
     if string.find(response['building'],"chi") >= 0:
       response['city'] = "Chicago"
     elif string.find(response['building'],"ewr") >= 0:
